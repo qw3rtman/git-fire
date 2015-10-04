@@ -6,6 +6,9 @@
 
 **Alias it to [`git out`](https://np.reddit.com/r/ProgrammerHumor/comments/3nc531/in_case_of_fire/cvmxnv1) or [`git going`](https://np.reddit.com/r/ProgrammerHumor/comments/3nc531/in_case_of_fire/cvmsajb) for comedic effect.**
 
+- `git config --global alias.out fire`
+- `git config --global alias.going fire`
+
 ## What It Does
 
 - creates new branch `fire-<current branch>-<user email>-<current epoch>`
