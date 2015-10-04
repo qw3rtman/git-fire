@@ -1,4 +1,4 @@
-# `git-fire 🔥`
+# `git-fire` 🔥
 
 ### [Inspiration](https://www.reddit.com/r/ProgrammerHumor/comments/3nc531/in_case_of_fire/)
 
