@@ -6,6 +6,19 @@
 
 **Alias it to [`git out`](https://np.reddit.com/r/ProgrammerHumor/comments/3nc531/in_case_of_fire/cvmxnv1) or [`git going`](https://np.reddit.com/r/ProgrammerHumor/comments/3nc531/in_case_of_fire/cvmsajb) for comedic effect.**
 
+## What It Does
+
+- creates new branch `fire-<current branch>-<current epoch>`
+- adds all files
+- commits with `"Fire! Branch <new branch>"` or custom message
+- pushes to remote
+
+## Usage
+
+`git fire <message>`
+
+`<message>` is optional. If not specified, `"Fire! Branch fire-[current branch]-[current epoch]"` will be used.
+
 ## Installation
 
 Just copy `git-fire` to your `$PATH` and ensure it is an executable (`chmod +x git-fire`) and you're good to go. 👍
