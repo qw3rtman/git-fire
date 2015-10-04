@@ -1,0 +1,51 @@
+#!/usr/bin/env sh
+
+VERSION="0.0.1"
+
+version() {
+	echo "git-fire version $VERSION\n"
+
+	git --version
+}
+
+display_help() {
+	cat <<-EOF
+
+  usage:
+    git fire [options] [COMMAND] [args]
+
+  commands:
+    git fire                        Add, commit, and push to remote in case of a fire
+    git fire <message>              Execute git fire with <message> for commit message
+
+
+  options:
+    -V, --version                   Output current version of git-fire
+    -h, --help                      Display this help information
+
+EOF
+	exit 0
+}
+
+unknown_command() {
+	cat <<-EOF
+
+	Unknown command ($1).
+
+	See all available commands with git fire --help.
+EOF
+	exit 0
+}
+
+if test $# -eq 0; then
+	display_help
+else
+	while test $# -ne 0; do
+		case $1 in
+			-V|--version) version ;;
+			-h|--help|help) display_help ;;
+			*) unknown_command "gg $@"; exit 1 ;;
+		esac
+		shift
+	done
+fi
