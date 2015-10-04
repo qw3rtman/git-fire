@@ -23,7 +23,7 @@ user_email() {
 }
 
 new_branch() {
-	echo "fire-$(current_branch)-$(current_epoch)-$(user_email)"
+	echo "fire-$(current_branch)-$(user_email)-$(current_epoch)"
 }
 
 fire() {
