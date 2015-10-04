@@ -15,7 +15,7 @@
 
 ## Usage
 
-`git fire <message>`
+`git-fire <message>`
 
 `<message>` is optional. If not specified, `"Fire! Branch fire-[current branch]-[current epoch]"` will be used.
 

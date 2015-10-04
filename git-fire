@@ -34,7 +34,9 @@ fire() {
 
 	git commit -m "$message"
 
-	git push --set-upstream origin $(current_branch)
+	for remote in "$(git remote)"; do
+		git push --set-upstream "${remote}" "$(current_branch)" || true
+	done
 
 	echo "\n\nLeave building!"
 }
