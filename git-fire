@@ -1,11 +1,39 @@
 #!/usr/bin/env sh
 
+# Setup.
 VERSION="0.0.1"
 
 version() {
 	echo "git-fire version $VERSION\n"
 
 	git --version
+}
+
+# Helpers.
+current_branch() {
+	git symbolic-ref --short HEAD
+}
+
+current_epoch() {
+	date +%s
+}
+
+new_branch() {
+	echo "fire-$(current_branch)-$(current_epoch)"
+}
+
+fire() {
+	git checkout -b $(new_branch)
+	git add -A
+
+	if [ -z $1 ]; then
+		message="Fire! Branch $(current_branch)."
+	else
+		message="$@"
+	fi
+
+	git commit -m "$message"
+	git push --set-upstream origin $(current_branch)
 }
 
 display_help() {
@@ -38,13 +66,13 @@ EOF
 }
 
 if test $# -eq 0; then
-	display_help
+	fire
 else
 	while test $# -ne 0; do
 		case $1 in
 			-V|--version) version ;;
 			-h|--help|help) display_help ;;
-			*) unknown_command "gg $@"; exit 1 ;;
+			*) fire "$@" ;;
 		esac
 		shift
 	done
