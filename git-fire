@@ -18,8 +18,12 @@ current_epoch() {
 	date +%s
 }
 
+user_email() {
+	git config user.email
+}
+
 new_branch() {
-	echo "fire-$(current_branch)-$(current_epoch)"
+	echo "fire-$(current_branch)-$(current_epoch)-$(user_email)"
 }
 
 fire() {
