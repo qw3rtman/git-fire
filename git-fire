@@ -55,25 +55,10 @@ EOF
 	exit 0
 }
 
-unknown_command() {
-	cat <<-EOF
 
-	Unknown command ($1).
+case $1 in
+	-V|--version) version; exit 0 ;;
+	-h|--help) display_help; exit 0 ;;
+esac
 
-	See all available commands with git fire --help.
-EOF
-	exit 0
-}
-
-if test $# -eq 0; then
-	fire
-else
-	while test $# -ne 0; do
-		case $1 in
-			-V|--version) version ;;
-			-h|--help|help) display_help ;;
-			*) fire "$@" ;;
-		esac
-		shift
-	done
-fi
+fire "@a"
