@@ -33,7 +33,10 @@ fire() {
 	fi
 
 	git commit -m "$message"
+
 	git push --set-upstream origin $(current_branch)
+
+	echo "\n\nLeave building!"
 }
 
 display_help() {
