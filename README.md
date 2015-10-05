@@ -26,6 +26,8 @@
 
 Just copy `git-fire` to your `$PATH` and ensure it is an executable (`chmod +x git-fire`) and you're good to go. 👍
 
+`git-fire` is also installable via [NPM](https://npmjs.com/git-fire). Just run `npm install -g git-fire`, which will copy the `git-fire` binary to your `$PATH`.
+
 Also make sure you have Git installed.
 
 ## Credit
