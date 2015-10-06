@@ -33,7 +33,7 @@ fire() {
 	if [ -z "$1" ]; then
 		message="Fire! Branch $(current_branch)."
 	else
-		message="$@"
+		message="$*"
 	fi
 
 	git commit -m "$message"
