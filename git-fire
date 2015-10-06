@@ -4,7 +4,7 @@
 VERSION="0.0.1"
 
 version() {
-	echo "git-fire version $VERSION\n"
+	printf "git-fire version %s\n" "$VERSION"
 
 	git --version
 }
@@ -42,7 +42,7 @@ fire() {
 		git push --set-upstream "${remote}" "$(current_branch)" || true
 	done
 
-	echo "\n\nLeave building!"
+	printf "\n\nLeave building!"
 }
 
 display_help() {
