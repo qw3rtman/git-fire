@@ -30,7 +30,7 @@ fire() {
 	git checkout -b "$(new_branch)"
 	git add -A
 
-	if [ -z $1 ]; then
+	if [ -z "$1" ]; then
 		message="Fire! Branch $(current_branch)."
 	else
 		message="$@"
