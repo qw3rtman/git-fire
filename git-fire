@@ -27,6 +27,11 @@ new_branch() {
 }
 
 fire() {
+	if [ ! -d .git ] && ! git rev-parse --git-dir > /dev/null 2>&1; then
+		echo "What are you doing? It is not git repo!!, hurry";
+		exit -1
+	fi
+
 	git checkout -b $(new_branch)
 	git add -A
 
