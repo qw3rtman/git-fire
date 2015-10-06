@@ -4,7 +4,7 @@
 VERSION="0.0.1"
 
 version() {
-	echo "git-fire version $VERSION\n"
+	printf "git-fire version %s\n" "$VERSION"
 
 	git --version
 }
@@ -27,22 +27,22 @@ new_branch() {
 }
 
 fire() {
-	git checkout -b $(new_branch)
+	git checkout -b "$(new_branch)"
 	git add -A
 
-	if [ -z $1 ]; then
+	if [ -z "$1" ]; then
 		message="Fire! Branch $(current_branch)."
 	else
-		message="$@"
+		message="$*"
 	fi
 
 	git commit -m "$message"
 
-	for remote in "$(git remote)"; do
+	for remote in $(git remote); do
 		git push --set-upstream "${remote}" "$(current_branch)" || true
 	done
 
-	echo "\n\nLeave building!"
+	printf "\n\nLeave building!"
 }
 
 display_help() {
