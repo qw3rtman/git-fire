@@ -27,7 +27,7 @@ new_branch() {
 }
 
 fire() {
-	git checkout -b $(new_branch)
+	git checkout -b "$(new_branch)"
 	git add -A
 
 	if [ -z $1 ]; then
