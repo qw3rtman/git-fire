@@ -42,7 +42,7 @@ fire() {
 		git push --set-upstream "${remote}" "$(current_branch)" || true
 	done
 
-	printf "\n\nLeave building!"
+	printf "\n\nLeave building!\n"
 }
 
 display_help() {
