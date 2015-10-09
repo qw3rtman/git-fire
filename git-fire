@@ -11,7 +11,7 @@ version() {
 
 # Helpers.
 current_branch() {
-	git symbolic-ref --short HEAD
+	basename $(git symbolic-ref HEAD)
 }
 
 current_epoch() {
