@@ -28,6 +28,10 @@ new_branch() {
 
 fire() {
 	git checkout -b "$(new_branch)"
+    
+	# cd to git root directory
+	cd $(git rev-parse --show-toplevel)
+
 	git add -A
 
 	if [ -z "$1" ]; then
