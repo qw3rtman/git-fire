@@ -2,7 +2,7 @@
 
 ### ![Inspiration](https://i.imgur.com/3POtveC.jpg)
 
-`git-fire` is a Git plugin that **helps in the event of an emergency** by adding all current files, committing, and pushing to a new branch (to prevent merge conflicts).
+`git-fire` is a Git plugin that **helps in the event of an emergency** by switching to the repository's root directory, adding all current files, committing, and pushing to a new branch (to prevent merge conflicts).
 
 **Alias it to [`git out`](https://np.reddit.com/r/ProgrammerHumor/comments/3nc531/in_case_of_fire/cvmxnv1) or [`git going`](https://np.reddit.com/r/ProgrammerHumor/comments/3nc531/in_case_of_fire/cvmsajb) for comedic effect.**
 
@@ -11,6 +11,7 @@
 
 ## What It Does
 
+- changes directory to root directory of the repository
 - creates new branch `fire-<current branch>-<user email>-<current epoch>`
 - adds all files
 - commits with `"Fire! Branch <new branch>"` or custom message
