@@ -37,4 +37,4 @@ Originally seen on [Hackathon Hackers Facebook](https://www.facebook.com/groups/
 
 [Original Reddit post](https://www.reddit.com/r/ProgrammerHumor/comments/3nc531/in_case_of_fire/)
 
-[Image source](https://instagram.com/p/8N8J8wRgPq/) | Artist: [Ákos Szokodi](https://github.com/szokodiakos)
+[Image source](https://instagram.com/p/8N8J8wRgPq/) | [Printable Image](http://imgur.com/IiAdxbB) | Artist: [Ákos Szokodi](https://github.com/szokodiakos)
