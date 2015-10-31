@@ -1,4 +1,4 @@
-# `git-fire` 🔥
+# `git-fire` :fire:
 
 ### ![Inspiration](https://i.imgur.com/3POtveC.jpg)
 
