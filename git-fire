@@ -2,6 +2,7 @@
 
 # Setup.
 VERSION="0.0.1"
+BRANCH_PREFIX="fire-"
 
 version() {
 	printf "git-fire version %s\n" "$VERSION"
@@ -23,12 +24,12 @@ user_email() {
 }
 
 new_branch() {
-	echo "fire-$(current_branch)-$(user_email)-$(current_epoch)"
+	echo "$BRANCH_PREFIX$(current_branch)-$(user_email)-$(current_epoch)"
 }
 
 fire() {
 	git checkout -b "$(new_branch)"
-    
+
 	# cd to git root directory
 	cd "$(git rev-parse --show-toplevel)"
 
@@ -49,6 +50,27 @@ fire() {
 	printf "\n\nLeave building!\n"
 }
 
+delete_fire_branches() {
+	all_branches=( $(git branch -a) )
+	for branch in "${all_branches[@]}"
+	do
+		for remote in $(git remote); do
+			if  [[ $branch == remotes/$remote/$BRANCH_PREFIX* ]] ;
+			then
+				branch_without_remote_in_name="${branch/remotes\/$remote\//}"
+				echo "deleting remote " $remote $branch_without_remote_in_name
+				git push --delete $remote $branch_without_remote_in_name
+			fi
+		done
+
+		if  [[ $branch == $BRANCH_PREFIX* ]] ;
+		then
+			echo "deleting local branch: $branch"
+			git branch -D $branch
+		fi
+	done
+}
+
 display_help() {
 	cat <<-EOF
 
@@ -63,6 +85,7 @@ display_help() {
   options:
     -V, --version                   Output current version of git-fire
     -h, --help                      Display this help information
+    -d, --delete                    Delete branches prefixed with "$BRANCH_PREFIX"
 
 EOF
 	exit 0
@@ -72,6 +95,7 @@ EOF
 case $1 in
 	-V|--version) version; exit 0 ;;
 	-h|--help) display_help; exit 0 ;;
+	-d|--delete) delete_fire_branches; exit 0 ;;
 esac
 
 fire "$@"
