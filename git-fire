@@ -28,7 +28,7 @@ new_branch() {
 
 fire() {
 	git checkout -b "$(new_branch)"
-    
+
 	# cd to git root directory
 	cd "$(git rev-parse --show-toplevel)"
 
@@ -44,6 +44,10 @@ fire() {
 
 	for remote in $(git remote); do
 		git push --set-upstream "${remote}" "$(current_branch)" || true
+	done
+
+	for sha in $(git rev-list -g stash); do
+		git push origin "$sha":refs/heads/stash_"$sha"
 	done
 
 	printf "\n\nLeave building!\n"
