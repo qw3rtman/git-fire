@@ -32,6 +32,12 @@ Just copy `git-fire` to your `$PATH` and ensure it is an executable (`chmod +x g
 
 Also make sure you have Git installed.
 
+## Disclaimer
+
+Your life is always more valuable than any code. You should leave the building immediately in a true emergency.
+
+Code can be re-written, but humans cannot.
+
 ## Credit
 
 Originally seen on [Hackathon Hackers Facebook](https://www.facebook.com/groups/hackathonhackers) group.
