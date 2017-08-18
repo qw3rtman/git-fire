@@ -12,7 +12,7 @@
 ## What It Does
 
 - changes directory to root directory of the repository
-- creates new branch `fire-<current branch>-<user email>-<current epoch>`
+- creates new branch `fire-<current branch>-<user email>-<seconds since epoch>`
 - adds all files
 - commits with `"Fire! Branch <new branch>"` or custom message
 - pushes commits to remote
@@ -22,7 +22,7 @@
 
 `git-fire <message>`
 
-`<message>` is optional. If not specified, `"Fire! Branch fire-<current branch>-<user email>-<current epoch>"` will be used.
+`<message>` is optional. If not specified, `"Fire! Branch fire-<current branch>-<user email>-<seconds since epoch>"` will be used.
 
 ## Installation
 
