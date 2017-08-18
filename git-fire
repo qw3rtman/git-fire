@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 
 # Setup.
-VERSION="0.2.2"
+VERSION="0.2.3"
 
 version() {
 	printf "git-fire version %s\n" "$VERSION"
