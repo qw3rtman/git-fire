@@ -1,0 +1,34 @@
+{
+  "author": {
+    "name": "Nimit Kalra",
+    "email": "me@nimit.io",
+    "url": "http://nimit.io"
+  },
+  "bin": {
+    "git-fire": "git-fire"
+  },
+  "bugs": {
+    "url": "https://github.com/qw3rtman/git-fire/issues"
+  },
+  "bundleDependencies": false,
+  "deprecated": false,
+  "description": "Save Your Code in an Emergency",
+  "homepage": "https://github.com/qw3rtman/git-fire",
+  "keywords": [
+    "git",
+    "git-fire",
+    "git",
+    "fire",
+    "emergency",
+    "plugin",
+    "extension"
+  ],
+  "license": "MIT",
+  "name": "git-fire",
+  "preferGlobal": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/qw3rtman/git-fire.git"
+  },
+  "version": "0.2.2"
+}
