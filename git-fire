@@ -42,7 +42,14 @@ fire() {
 		message="$*"
 	fi
 
-	git commit -m "$message" --no-verify
+	# for git >= 2.x add the --no-gpg-sign flag
+	if (git version | grep \\s2\.) then
+		nosignflag="--no-gpg-sign"
+	else
+		nosignflag=""
+	fi
+
+	git commit -m "$message" --no-verify $nosignflag
 
 	for remote in $(git remote); do
 		git push --set-upstream "${remote}" "$(current_branch)" || true
