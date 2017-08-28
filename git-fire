@@ -48,7 +48,7 @@ fire() {
 		git push --set-upstream "${remote}" "$(current_branch)" || true
 	done
 
-  if [[ $(git stash list) != '' ]]; then
+  if [ '$(git stash list)' != '' ]; then
 	  for sha in $(git rev-list -g stash); do
 		  git push origin "$sha":refs/heads/"$(current_branch $initial_branch)"-stash-"$sha"
 	  done
