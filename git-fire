@@ -45,7 +45,7 @@ fire() {
 	git commit -m "$message" --no-verify
 
 	for remote in $(git remote); do
-		git push --set-upstream "${remote}" "$(current_branch)" || true
+		git push "${remote}" "$(current_branch)" || true
 	done
 
   if [[ $(git stash list) != '' ]]; then
