@@ -78,7 +78,7 @@ EOF
 }
 
 
-case $1 in
+case "$1" in
 	-V|--version) version; exit 0 ;;
 	-h|--help) display_help; exit 0 ;;
 esac
