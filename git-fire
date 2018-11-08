@@ -27,6 +27,7 @@ new_branch() {
 }
 
 fire() {
+	local initial_branch message remote
 	initial_branch="$(current_branch)"
 
 	git checkout -b "$(new_branch)"
