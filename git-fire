@@ -45,12 +45,12 @@ fire() {
 	git commit -m "$message" --no-verify
 
 	for remote in $(git remote); do
-		git push --set-upstream "${remote}" "$(current_branch)" || true
+		git push --no-verify --set-upstream "${remote}" "$(current_branch)" || true
 	done
 
   if [[ $(git stash list) != '' ]]; then
 	  for sha in $(git rev-list -g stash); do
-		  git push origin "$sha":refs/heads/"$(current_branch $initial_branch)"-stash-"$sha"
+		  git push --no-verify origin "$sha":refs/heads/"$(current_branch $initial_branch)"-stash-"$sha"
 	  done
   fi
 
