@@ -20,7 +20,7 @@
 
 ## Usage
 
-`git-fire <message>`
+`git fire <message>`
 
 `<message>` is optional. If not specified, `"Fire! Branch fire-<current branch>-<user email>-<seconds since epoch>"` will be used.
 
