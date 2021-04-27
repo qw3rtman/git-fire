@@ -18,6 +18,9 @@
 - pushes commits to remote
 - pushes all stashes to remote
 
+### Demonstration 
+[![demo](https://asciinema.org/a/Pk6FzfNcXnqrnzIlgPE7boZIo.svg)](https://asciinema.org/a/Pk6FzfNcXnqrnzIlgPE7boZIo?autoplay=1)
+
 ## Usage
 
 `git-fire <message>`
