@@ -1,6 +1,6 @@
 # `git-fire` :fire:
 
-### ![Inspiration](https://i.imgur.com/3POtveC.jpg)
+<img src="https://i.imgur.com/tp98ky7.jpg" alt="Inspiration" width="460" />
 
 `git-fire` is a Git plugin that **helps in the event of an emergency** by switching to the repository's root directory, adding all current files, committing, and pushing commits and all stashes to a new branch (to prevent merge conflicts).
 
